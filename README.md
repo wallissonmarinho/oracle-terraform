@@ -1,5 +1,3 @@
-# Ampernetacle
-
 This is a Terraform configuration to deploy a Kubernetes cluster on
 [Oracle Cloud Infrastructure][oci]. It creates a few virtual machines
 and uses [kubeadm] to install a Kubernetes control plane on the first
@@ -11,7 +9,7 @@ Oracle's (pretty generous if you ask me) [free tier][freetier].
 
 **It is not meant to run production workloads,**
 but it's great if you want to learn Kubernetes with a "real" cluster
-(i.e. a cluster with multiple nodes) without breaking the bank, *and*
+(i.e. a cluster with multiple nodes) without breaking the bank, _and_
 if you want to develop or test applications on ARM.
 
 ## Getting started
@@ -32,12 +30,14 @@ At the end of the `terraform apply`, a `kubeconfig` file is generated
 in this directory. To use your new cluster, you can do:
 
 Linux
+
 ```bash
 export KUBECONFIG=$PWD/kubeconfig
 kubectl get nodes
 ```
 
 Windows
+
 ```powershell
 $env:KUBECONFIG="$pwd\kubeconfig"
 kubectl get nodes
@@ -106,7 +106,7 @@ of the free tier.
 
 ## What does "Ampernetacle" mean?
 
-It's a *porte-manteau* between Ampere, Kubernetes, and Oracle.
+It's a _porte-manteau_ between Ampere, Kubernetes, and Oracle.
 It's probably not the best name in the world but it's the one
 we have! If you have an idea for a better name let us know. 😊
 
@@ -149,6 +149,7 @@ should be able to refresh the session with
 #### Symptom
 
 If you get a message like the following one:
+
 ```
 Error: 500-InternalError
 │ ...
@@ -161,7 +162,7 @@ on OCI to create the cluster.
 
 #### Solution
 
-One solution is to switch to a different *availability domain*.
+One solution is to switch to a different _availability domain_.
 This can be done by changing the `availability_domain` input variable. (Thanks @uknbr for the contribution!)
 
 Note 1: some regions have only one availability domain. In that
@@ -211,10 +212,10 @@ After the VMs are created, you can log into the VMs with the
 that was created by Terraform.
 
 Then you can check the cloud init output file, e.g. like this:
+
 ```
 tail -n 100 -f /var/log/cloud-init-output.log
 ```
-
 
 [ccm]: https://github.com/oracle/oci-cloud-controller-manager
 [createaccount]: https://bit.ly/free-oci-dat-k8s-on-arm

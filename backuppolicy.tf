@@ -16,13 +16,6 @@ resource "oci_core_volume_backup_policy" "backup_policy" {
     retention_seconds = 2419200
     time_zone         = "REGIONAL_DATA_CENTER_TIME"
   }
-
-  schedules {
-    backup_type       = "INCREMENTAL"
-    period            = "ONE_MONTH"
-    retention_seconds = 324691200
-    time_zone         = "REGIONAL_DATA_CENTER_TIME"
-  }
 }
 
 resource "oci_core_volume_backup_policy_assignment" "backup_policy_assignment" {

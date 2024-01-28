@@ -1,11 +1,16 @@
 variable "backup_policy_name" {
   type    = string
-  default = "silver_backup_policy"
+  default = "dev-k8s-gold-policy"
 }
 
 variable "block_storage_name" {
   type    = string
   default = "dev-k8s-storage"
+}
+
+variable "block_storage_size" {
+  type    = number
+  default = 150
 }
 
 variable "name" {
