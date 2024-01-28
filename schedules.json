@@ -1,0 +1,18 @@
+[{
+        "backupType": "INCREMENTAL",
+        "period": "ONE_DAY",
+        "retentionSeconds": 604800,
+        "timeZone": "REGIONAL_DATA_CENTER_TIME"
+      },
+      {
+        "backupType": "INCREMENTAL",
+        "period": "ONE_WEEK",
+        "retentionSeconds": 2419200,
+        "timeZone": "REGIONAL_DATA_CENTER_TIME"
+      },
+      {
+        "backupType": "INCREMENTAL",
+        "period": "ONE_MONTH",
+        "retentionSeconds": 324691200,
+        "timeZone": "REGIONAL_DATA_CENTER_TIME"
+      }]
