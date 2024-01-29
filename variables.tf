@@ -8,6 +8,11 @@ variable "block_storage_name" {
   default = "dev-k8s-storage"
 }
 
+variable "backup_policy_time_zone" {
+  type    = string
+  default = "UTC"
+}
+
 variable "block_storage_size" {
   type    = number
   default = 150

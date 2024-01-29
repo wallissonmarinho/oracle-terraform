@@ -7,14 +7,14 @@ resource "oci_core_volume_backup_policy" "backup_policy" {
     backup_type       = "INCREMENTAL"
     period            = "ONE_DAY"
     retention_seconds = 604800
-    time_zone         = "REGIONAL_DATA_CENTER_TIME"
+    time_zone         = var.backup_policy_time_zone
   }
 
   schedules {
     backup_type       = "INCREMENTAL"
     period            = "ONE_WEEK"
     retention_seconds = 2419200
-    time_zone         = "REGIONAL_DATA_CENTER_TIME"
+    time_zone         = var.backup_policy_time_zone
   }
 }
 
