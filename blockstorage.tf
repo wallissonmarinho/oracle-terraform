@@ -1,7 +1,7 @@
 resource "oci_core_volume" "_" {
   compartment_id      = local.compartment_id
   display_name        = var.block_storage_name
-  size_in_gbs         = var.block_storage_name
+  size_in_gbs         = var.block_storage_size
   availability_domain = data.oci_identity_availability_domains._.availability_domains[var.availability_domain].name
 }
 
