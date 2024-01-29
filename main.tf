@@ -1,6 +1,6 @@
 resource "oci_identity_compartment" "_" {
-  name          = var.name
-  description   = var.name
+  name          = var.compartment
+  description   = var.compartment
   enable_delete = true
 }
 
@@ -15,10 +15,8 @@ data "oci_identity_availability_domains" "_" {
 data "oci_core_images" "_" {
   compartment_id           = local.compartment_id
   shape                    = var.shape
-  operating_system         = "Canonical Ubuntu"
-  operating_system_version = "22.04"
-  #operating_system         = "Oracle Linux"
-  #operating_system_version = "7.9"
+  operating_system         = var.operating_system
+  operating_system_version = var.operating_system_version
 }
 
 resource "oci_core_instance" "_" {
@@ -50,6 +48,7 @@ resource "oci_core_instance" "_" {
   }
   provisioner "remote-exec" {
     inline = [
+      "sudo timedatectl set-timezone UTC",
       "tail -f /var/log/cloud-init-output.log &",
       "cloud-init status --wait >/dev/null",
     ]

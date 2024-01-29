@@ -18,9 +18,19 @@ variable "block_storage_size" {
   default = 150
 }
 
-variable "name" {
+variable "compartment" {
   type    = string
   default = "dev-k8s-on-arm"
+}
+
+variable "operating_system" {
+  type    = string
+  default     = "Canonical Ubuntu"
+}
+
+variable "operating_system_version" {
+  type    = string
+  default     = "22.04"
 }
 
 /*
@@ -45,7 +55,7 @@ variable "how_many_nodes" {
 
 variable "availability_domain" {
   type    = number
-  default = 0
+  default = 1
 }
 
 variable "ocpus_per_node" {
