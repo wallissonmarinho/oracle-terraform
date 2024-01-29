@@ -33,6 +33,11 @@ variable "operating_system_version" {
   default     = "22.04"
 }
 
+variable "timezone" {
+  description = "Fuso horário para ser configurado na instância"
+  default     = "UTC"
+}
+
 /*
 Available flex shapes:
 "VM.Optimized3.Flex"  # Intel Ice Lake

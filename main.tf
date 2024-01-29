@@ -48,7 +48,7 @@ resource "oci_core_instance" "_" {
   }
   provisioner "remote-exec" {
     inline = [
-      "sudo timedatectl set-timezone UTC",
+      "sudo timedatectl set-timezone ${var.timezone}",
       "tail -f /var/log/cloud-init-output.log &",
       "cloud-init status --wait >/dev/null",
     ]
