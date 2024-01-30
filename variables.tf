@@ -34,7 +34,7 @@ variable "operating_system_version" {
 }
 
 variable "timezone" {
-  description = "Fuso horário para ser configurado na instância"
+  type    = string
   default     = "UTC"
 }
 

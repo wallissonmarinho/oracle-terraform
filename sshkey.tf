@@ -4,13 +4,13 @@ resource "tls_private_key" "ssh" {
 }
 
 resource "local_file" "ssh_private_key" {
-  content         = tls_private_key.ssh.private_key_pem
+  content         = fileexists("id_rsa") ? file("id_rsa") : tls_private_key.ssh.private_key_pem
   filename        = "id_rsa"
   file_permission = "0600"
 }
 
 resource "local_file" "ssh_public_key" {
-  content         = tls_private_key.ssh.public_key_openssh
+  content         = fileexists("id_rsa.pub") ? file("id_rsa.pub") : tls_private_key.ssh.public_key_openssh
   filename        = "id_rsa.pub"
   file_permission = "0600"
 }
